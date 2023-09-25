@@ -15,8 +15,7 @@ entry.pack(pady=10)
 def click():
     user_input = entry.get()
     if user_input != "":
-        l1 = Label(root, text=user_input, font=('times new roman', 10, 'bold'), fg="red")
-        l1.pack(side=TOP)
+        l1.config(text=str(user_input))
         entry.delete(0, END)  # Clear the Entry widget
     else:
         messagebox.showinfo("Warning", "Please fill in the entry!")
@@ -24,6 +23,9 @@ def click():
 
 button = Button(root, text='Click', font=('arial', 20), command=click)
 button.pack(pady=20)
+
+l1 = Label(root, text="", font=('times new roman', 10, 'bold'), fg="red")
+l1.pack(side=TOP)
 
 root.bind("<Return>", lambda event=None: click())  # button work when hit  enter
 
