@@ -4,9 +4,7 @@ import datetime
 import time
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
 from tkinter import messagebox
-
 import webbrowser
 
 root = Tk()
@@ -57,6 +55,7 @@ def get_bot_response(user_input):
         ("afaf", "Sorry, I didn't understand your question."),
         ("hi.", "Hi, I am a chatbot. You?"),
         ("your name?", "I am a chatbot. You?"),
+        ("i love u", "Sorry ,i am just a computer program.I don't have any fillings."),
         ("my name is.", "Oh, nice name."),
         ("i am.", "Oh, nice name."),
         ("how are you?", "I am fine. How can I assist you?"),
@@ -67,7 +66,7 @@ def get_bot_response(user_input):
         ("can you sing a song.", "songw"),
         ("nice", "Thank you"),
         ("today date", "Today Date is " + str(datetime.date.today())),
-        ("what time is it", "Now time is " + str(current_time)),
+        ("what time is it", "Now time is " + str(current_time))
     ]
 
     # Convert the dictionary to a DataFrame
