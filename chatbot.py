@@ -1,5 +1,6 @@
 from tkinter import *
 import pandas as pd
+import datetime
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
@@ -7,12 +8,12 @@ from sklearn.metrics.pairwise import cosine_similarity
 from tkinter import messagebox
 
 import webbrowser
+
 root = Tk()
 
 # Design part
 root.title("Chat Bot")
 root.geometry("500x500")
-root.wm_iconbitmap("img/download.ico")
 root.resizable(False, False)
 heading = Label(root, text="Chat Bot", font=('arial', 15, "bold"))
 heading.pack()
@@ -48,19 +49,22 @@ def user():
 
 def get_bot_response(user_input):
     user_input = user_input.lower()  # Convert to lowercase for case-insensitive matching
+    date = datetime.date.today()
+    date = "Today Date is" + str(date)
     dictionary = [
         ("afaf", "Sorry, I didn't understand your question."),
-        ("hi", "Hi, I am a chatbot. You?"),
+        ("hi.", "Hi, I am a chatbot. You?"),
         ("your name?", "I am a chatbot. You?"),
-        ("my name is ", "Oh, nice name."),
-        ("i am", "Oh, nice name."),
+        ("my name is.", "Oh, nice name."),
+        ("i am.", "Oh, nice name."),
         ("how are you?", "I am fine. How can I assist you?"),
-        ("can you help me", "Yes, how can I help you?"),
-        ("i am fine", "That's great to hear! How can I help you today?"),
+        ("can you help me.", "Yes, how can I help you?"),
+        ("i am fine.", "That's great to hear! How can I help you today?"),
         ("how old are you?", "I am just a computer program, so I don't have an age."),
-        ("tell me a joke", "Why don't scientists trust atoms? Because they make up everything!"),
-        ("can you sing a song", "songw"),
-        ("nice", "Thank you")
+        ("tell me a joke.", "Why don't scientists trust atoms? Because they make up everything!"),
+        ("can you sing a song.", "songw"),
+        ("nice", "Thank you"),
+        ("today date", date)
     ]
 
     # Convert the dictionary to a DataFrame
@@ -90,7 +94,6 @@ def get_bot_response(user_input):
         return "How is it ?"
     elif response:
         return response
-
 
 
 input_text = StringVar()
