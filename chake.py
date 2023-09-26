@@ -1,7 +1,5 @@
-import datetime
+import time
 
-# Get the current date
-current_date = datetime.date.today()
-
-# Print the current date
-print("Current Date:", current_date)
+t = time.localtime()
+current_time = time.strftime("%H:%M:%S", t)
+print(current_time)

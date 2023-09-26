@@ -1,7 +1,7 @@
 from tkinter import *
 import pandas as pd
 import datetime
-
+import time
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -49,8 +49,10 @@ def user():
 
 def get_bot_response(user_input):
     user_input = user_input.lower()  # Convert to lowercase for case-insensitive matching
-    date = datetime.date.today()
-    date = "Today Date is" + str(date)
+    t = time.localtime()
+    current_time = time.strftime("%H:%M:%S", t)
+
+
     dictionary = [
         ("afaf", "Sorry, I didn't understand your question."),
         ("hi.", "Hi, I am a chatbot. You?"),
@@ -64,7 +66,8 @@ def get_bot_response(user_input):
         ("tell me a joke.", "Why don't scientists trust atoms? Because they make up everything!"),
         ("can you sing a song.", "songw"),
         ("nice", "Thank you"),
-        ("today date", date)
+        ("today date", "Today Date is " + str(datetime.date.today())),
+        ("what time is it", "Now time is " + str(current_time)),
     ]
 
     # Convert the dictionary to a DataFrame
