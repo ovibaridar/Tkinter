@@ -13,7 +13,7 @@ class my_frame:
     def button(self):
         self.name = tkinter.simpledialog.askstring("Input", "what is your name")
         self.age = tkinter.simpledialog.askinteger("Input", "what is your Age")
-        print(self.name, self.age)
+        print(self.name, self.age, "  ok")
 
 
 root = Tk()
