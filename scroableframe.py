@@ -2,7 +2,7 @@ from tkinter import *
 import customtkinter as ctk
 
 root = Tk()
-root.title("frame ")
+root.title("frame")
 root.geometry("500x500")
 
 frame =Frame(root, height=500, width=500, bg="#926868")
